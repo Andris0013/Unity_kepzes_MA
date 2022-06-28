@@ -18,6 +18,6 @@ public class Serializables : MonoBehaviour
 
     private void OnValidate()
     {
-        summa = iVar + fVar;
+        var summa = iVar + fVar;
     }
 }

@@ -19,7 +19,7 @@ public class Types : MonoBehaviour
         Debug.Log(b1);
         Debug.Log(b2);
 
-        var v = 3.5f;       
+                            // var v = 3.5f;       
         var p = i * f;      // var helps so we don't have to write int, float, string etc.
 
         int p1 = i * (int)f;        //casting equals 9 (casting = (int) basicaly we make it an int variable)
