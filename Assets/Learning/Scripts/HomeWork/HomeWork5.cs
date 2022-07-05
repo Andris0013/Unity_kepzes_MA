@@ -16,19 +16,19 @@ public class HomeWork5 : MonoBehaviour
     {
         for (int i = 1; i <= N; i++)
         {
-            bool haromTöbbszöröse = i % 3 == 0;
-            bool ötTöbbszöröse = i % 5 == 0;
-            bool haromEsÖtTöbbszöröse = haromTöbbszöröse && ötTöbbszöröse;
+            bool devidableBy3 = i % 3 == 0;
+            bool devidableBy5 = i % 5 == 0;
+            bool devdableByBoth = devidableBy3 && devidableBy5;
 
-            if (haromEsÖtTöbbszöröse == true)
+            if (devdableByBoth == true)
                 Debug.Log("fizzbuzz");
 
 
-            else if (ötTöbbszöröse == true)
+            else if (devidableBy5 == true)
                 Debug.Log("buzz");
 
 
-            else if (haromTöbbszöröse == true)
+            else if (devidableBy3 == true)
                 Debug.Log("fizz");
 
             else
