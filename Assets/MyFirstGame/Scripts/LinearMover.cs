@@ -15,21 +15,21 @@ public class LinearMover : MonoBehaviour
         bool right = Input.GetKey(rightKey);
         bool left = Input.GetKey(leftKey);
 
-       // float y = ToAxis(up, down);
+        // float y = ToAxis(up, down);
         float x = ToAxis(right, left);
         float z = ToAxis(up, down); 
 
         Vector3 velocity = new Vector3(x, 0, z);
 
         transform.position += velocity.normalized * speed * Time.deltaTime;       
-        // Time.deltatime megadja, hogy mennyi idõ telt el az utolsó képfrissítés óta
-        // Normalized segít abban, hogy átlós mozgásnál ne változzon a sebesség
-        // += azt jelenti, hogy önmagához is hozzáadja
-        // speed a bevitt sebesség érték
+        // Time.deltatime megadja, hogy mennyi idï¿½ telt el az utolsï¿½ kï¿½pfrissï¿½tï¿½s ï¿½ta
+        // Normalized segï¿½t abban, hogy ï¿½tlï¿½s mozgï¿½snï¿½l ne vï¿½ltozzon a sebessï¿½g
+        // += azt jelenti, hogy ï¿½nmagï¿½hoz is hozzï¿½adja
+        // speed a bevitt sebessï¿½g ï¿½rtï¿½k
 
     }
 
-    float ToAxis(bool positive, bool negative)                  // Elmozdulás függvényünk
+    float ToAxis(bool positive, bool negative)                  // Elmozdulï¿½s fï¿½ggvï¿½nyï¿½nk
     {
         float value;
         if (positive)

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 433394412}
-  - component: {fileID: 433394413}
+  - component: {fileID: 433394414}
   m_Layer: 0
   m_Name: MyFirst Script
   m_TagString: Untagged
@@ -155,7 +155,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &433394413
+--- !u!114 &433394414
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,10 +164,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 433394410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb40af81fbab73e498d24ef03726a0ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 0458ec1221a35234eac8cabaf33aeb25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  N: 15
+  speed: 5
+  upKey: 273
+  downKey: 274
+  leftKey: 276
+  rightKey: 275
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
