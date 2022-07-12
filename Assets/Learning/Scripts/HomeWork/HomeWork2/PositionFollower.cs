@@ -7,11 +7,11 @@ public class PositionFollower : MonoBehaviour
 {
 
     [SerializeField] float speed;
-    [SerializeField] Vector3 fixedDirection;
+    [SerializeField] Vector3 position;
 
     void Update()
     {
-        Vector3 velocity = (fixedDirection - transform.position).normalized;
+        Vector3 velocity = (position - transform.position).normalized;
         transform.position += speed * velocity * Time.deltaTime;
     }
 }

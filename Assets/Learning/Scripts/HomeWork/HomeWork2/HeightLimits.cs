@@ -14,11 +14,17 @@ public class HeightLimits : MonoBehaviour
     {
         Vector3 position = transform.position;
 
+       /*
         if (position.y < minimum)
             position.y = minimum;
         else if (position.y > maximum)
             position.y = maximum;
 
         transform.position = position;
+       */
+
+        position.y = Mathf.Clamp(position.y, minimum, maximum);
+        transform.position = position;
+
     }
 }

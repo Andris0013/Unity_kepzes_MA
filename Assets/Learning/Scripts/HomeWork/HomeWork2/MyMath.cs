@@ -84,7 +84,7 @@ public class MyMath : MonoBehaviour
         return value >= 0 ? 1 : -1;
     }
 
-    float Floor(float value)                                            // Returns the smallest integer, for example 3 if 3,5 or 4 if 4,9 and 3 if 3 (why 1F and not 1?)
+    float Floor(float value)                                            // Returns the smallest integer, for example 3 if 3,5 or 4 if 4,9 and 3 if 3 
     {
         return value - (value % 1F);
     }
