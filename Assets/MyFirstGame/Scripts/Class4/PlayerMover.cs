@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LinearMover : MonoBehaviour
+public class PlayerMover : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float rotationSpeed;
@@ -10,8 +10,21 @@ public class LinearMover : MonoBehaviour
     [SerializeField] KeyCode leftKey;
     [SerializeField] KeyCode rightKey;
 
+    [SerializeField] Damageable damageable;
+
+    private void OnValidate()
+    {
+        if (damageable == null)
+            damageable = GetComponent<Damageable>();        
+    }
+
+
+
     void Update()                            // Update is called once per frame
     {
+        if (damageable != null && damageable.health > 0)
+            return;
+
         bool up = Input.GetKey(upKey);
         bool down = Input.GetKey(downKey);
         bool right = Input.GetKey(rightKey);
