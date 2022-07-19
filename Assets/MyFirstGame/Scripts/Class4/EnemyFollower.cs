@@ -52,7 +52,8 @@ public class EnemyFollower : MonoBehaviour
         float step = (endPos - startPos).magnitude;
 
         Vector3 vectorPointToTarget = player.position - transform.position;
-        transform.rotation = Quaternion.LookRotation(vectorPointToTarget);
+        if (vectorPointToTarget != Vector3.zero)
+            transform.rotation = Quaternion.LookRotation(vectorPointToTarget);
 
         stamina -= step;
 

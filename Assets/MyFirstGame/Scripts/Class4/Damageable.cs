@@ -15,7 +15,7 @@ public class Damageable : MonoBehaviour
             Debug.Log(other.name);
 
             // health -= Mathf.Min(damager.damage,health);
-
+            health -= damager.damage;
             health = Mathf.Clamp(health, 0, maxHealth);
         }
     }
