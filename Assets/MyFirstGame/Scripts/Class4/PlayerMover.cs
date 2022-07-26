@@ -22,7 +22,7 @@ public class PlayerMover : MonoBehaviour
 
     void Update()                            // Update is called once per frame
     {
-        if (damageable != null && damageable.health < 0)
+        if (damageable != null && damageable.health <= 0)
             return;
 
         bool up = Input.GetKey(upKey);

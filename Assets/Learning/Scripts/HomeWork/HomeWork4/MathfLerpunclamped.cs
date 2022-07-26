@@ -3,15 +3,15 @@
 
 using UnityEngine;
 
-public class MathfLerpunclamped : MonoBehaviour
+class MathfLerpunclamped : MonoBehaviour
 {
     
 
     float LerpUnclamped(float a, float b, float t)
     {
-        float x = a + (b - a) * t;
+       // float x = a + (b - a) * t;
 
-        return x;
+        return a + (b - a) * t;
     }
 
 }
