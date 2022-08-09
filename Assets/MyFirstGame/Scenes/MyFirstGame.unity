@@ -309,6 +309,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6268614366290472959, guid: 6e742600660a5c74aa6f6b548a57208c, type: 3}
+      propertyPath: shootKey
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 7822394973836567741, guid: 6e742600660a5c74aa6f6b548a57208c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -359,6 +363,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7822394974105930472, guid: 6e742600660a5c74aa6f6b548a57208c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822394974105930474, guid: 6e742600660a5c74aa6f6b548a57208c, type: 3}
+      propertyPath: uiText
+      value: 
+      objectReference: {fileID: 1308218054}
+    - target: {fileID: 7822394974105930474, guid: 6e742600660a5c74aa6f6b548a57208c, type: 3}
+      propertyPath: GameOverObject
+      value: 
+      objectReference: {fileID: 1831637508}
+    - target: {fileID: 7822394974105930475, guid: 6e742600660a5c74aa6f6b548a57208c, type: 3}
+      propertyPath: upKey
+      value: 273
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822394974105930475, guid: 6e742600660a5c74aa6f6b548a57208c, type: 3}
+      propertyPath: downKey
+      value: 274
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822394974105930475, guid: 6e742600660a5c74aa6f6b548a57208c, type: 3}
+      propertyPath: leftKey
+      value: 276
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822394974105930475, guid: 6e742600660a5c74aa6f6b548a57208c, type: 3}
+      propertyPath: rightKey
+      value: 275
+      objectReference: {fileID: 0}
+    - target: {fileID: 7822394974105930475, guid: 6e742600660a5c74aa6f6b548a57208c, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7822394974523863580, guid: 6e742600660a5c74aa6f6b548a57208c, type: 3}
@@ -569,7 +601,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  player: {fileID: 386990817}
+  followables:
+  - {fileID: 386990817}
+  - {fileID: 661110259}
   startStamina: 15
   regenerateStamina: 5
 --- !u!114 &133789236
@@ -1269,6 +1303,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 660450675}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &661110259 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7822394974105930472, guid: 6e742600660a5c74aa6f6b548a57208c, type: 3}
+  m_PrefabInstance: {fileID: 44694962}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &690739366
 GameObject:
   m_ObjectHideFlags: 0
