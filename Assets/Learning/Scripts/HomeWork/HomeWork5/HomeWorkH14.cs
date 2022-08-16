@@ -5,17 +5,17 @@ public class HomeWorkH14 : MonoBehaviour
 {
     [SerializeField] string text;
     [Space]
-    [SerializeField] int uniqCharacterCount;
+    [SerializeField] int uniqueCharacterCount;
 
     void OnValidate()
     {
-        uniqCharacterCount = CountUniqCharacters(text);
+        uniqueCharacterCount = CountUniqueCharacters(text);
     }
 
-    int CountUniqCharacters(string text)
+    int CountUniqueCharacters(string text)
     {
         List<char> characters = new List<char>();
-        foreach (char c in characters)                      // char c ??
+        foreach (char c in characters)                      // creates a variable that takes the value of the indexes in order until the end -- kinda
         {
             if (!characters.Contains(c))
                 characters.Add(c);

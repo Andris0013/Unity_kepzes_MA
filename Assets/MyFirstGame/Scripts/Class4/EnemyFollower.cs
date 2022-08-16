@@ -45,7 +45,7 @@ public class EnemyFollower : MonoBehaviour
         // if (followables == null || followables.Count == 0);
             
         
-        Transform followable = FindClosest(followables);
+        Transform followable = TransformHelper.FindClosest(followables, transform);
 
 
 
@@ -70,28 +70,4 @@ public class EnemyFollower : MonoBehaviour
             stamina = Mathf.Max(0, stamina);
         }
     }
-    private Transform FindClosest(List<Transform> transforms)
-    {
-        if (transforms == null || transforms.Count == 0)
-            return null;
-
-        Vector3 selfPos = transform.position;
-
-        Transform closest = transforms[0];
-
-        float closestDistance = Vector3.Distance(selfPos, transforms[0].position);
-
-        foreach (Transform item in transforms)
-        {
-            float distance = Vector3.Distance(selfPos, item.position);
-
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                closest = item;
-            }
-        }
-        return closest;
-    }
-
 }

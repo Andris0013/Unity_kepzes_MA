@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HomeWorkH4 : MonoBehaviour
 {
-    [SerializeField] float[] values = Array.Empty<float>();         // Why not just float[] values; ?
+    [SerializeField] float[] values = Array.Empty<float>();
     [Space]
     [SerializeField] float minimum;
     [SerializeField] float maximum;
@@ -20,12 +20,13 @@ public class HomeWorkH4 : MonoBehaviour
         if (values == null || values.Length == 0)
             return 0;
 
-        minimum = values[0];
+        float minimum = values[0];
 
         for (int i = 1; i < values.Length; i++)
         {
-            if (values[i] < minimum)
-                minimum = values[i];
+            float n = values[i];
+            if (n < minimum)
+                minimum = n;
         }
         return minimum;
     }
@@ -35,12 +36,13 @@ public class HomeWorkH4 : MonoBehaviour
         if (values == null || values.Length == 0)
             return 0;
 
-        maximum = values[0];
+        float maximum = values[0];
 
         for (int i = 1; i < values.Length; i++)
         {
-            if(values[i] > maximum)
-                maximum = values[i];
+            float n = values[i];
+            if (n > maximum)
+                maximum = n;
         }
         return maximum;
 

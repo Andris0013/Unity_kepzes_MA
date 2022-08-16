@@ -25,6 +25,25 @@ public class PlayerMover : MonoBehaviour
         if (damageable != null && damageable.health <= 0)
             return;
 
+        Vector3 velocity = GetInputVector();
+        Move(velocity);
+    }
+
+    private void Move(Vector3 velocity)
+    {
+        transform.position += velocity.normalized * speed * Time.deltaTime;
+
+        if (velocity != Vector3.zero)
+        {
+
+            Quaternion targetRotation = Quaternion.LookRotation(velocity);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+        }
+    }
+
+    Vector3 GetInputVector()
+    {
         bool up = Input.GetKey(upKey);
         bool down = Input.GetKey(downKey);
         bool right = Input.GetKey(rightKey);
@@ -33,31 +52,7 @@ public class PlayerMover : MonoBehaviour
         // float y = ToAxis(up, down);
         float x = ToAxis(right, left);
         float z = ToAxis(up, down);
-
-        Vector3 velocity = new Vector3(x, 0, z);
-
-        transform.position += velocity.normalized * speed * Time.deltaTime;
-       
-        /* 
-           Time.deltatime megadja, hogy mennyi id� telt el az utols� k�pfriss�t�s �ta
-           Normalized seg�t abban, hogy �tl�s mozg�sn�l ne v�ltozzon a sebess�g
-           += azt jelenti, hogy onmagahoz is hozzaadja
-           speed a bevitt sebesseg ertek
-        */
-
-        
-        
-
-        if (velocity != Vector3.zero)
-        {
-            // Quaternionnal könnyebb számolnia a gépnek és ezzel megadjuk, melyik irányba nézzen a game object, ami a velocity       
-
-            Quaternion targetRotation = Quaternion.LookRotation(velocity);
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);   
-
-        }
-
-
+        return new Vector3(x, 0, z);
     }
 
     float ToAxis(bool positive, bool negative)                               // Elmozdulas fuggvenyunk
@@ -73,3 +68,11 @@ public class PlayerMover : MonoBehaviour
 
     }
 }
+/* 
+   Time.deltatime megadja, hogy mennyi id� telt el az utols� k�pfriss�t�s �ta
+   Normalized seg�t abban, hogy �tl�s mozg�sn�l ne v�ltozzon a sebess�g
+   += azt jelenti, hogy onmagahoz is hozzaadja
+   speed a bevitt sebesseg ertek
+
+   Quaternionnal könnyebb számolnia a gépnek és ezzel megadjuk, melyik irányba nézzen a game object, ami a velocity
+*/
