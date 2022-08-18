@@ -7,6 +7,7 @@ public class ClickExplode : MonoBehaviour
     [SerializeField] float explosionForce = 500;
     [SerializeField] float explosionRadious = 10;
     [SerializeField] float upwardModifier = 0.5f;
+    [SerializeField] ParticleSystem particles;
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -25,6 +26,8 @@ public class ClickExplode : MonoBehaviour
                 }
                 
             }
+            particles.transform.position = hit.point;
+            particles.Play();
         }
     }
 }
