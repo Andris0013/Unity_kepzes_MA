@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMoverPhisics : MonoBehaviour
+public class PlayerMover : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float rotationSpeed;
@@ -11,17 +11,24 @@ public class PlayerMoverPhisics : MonoBehaviour
     [SerializeField] KeyCode rightKey;
 
     [SerializeField] Damageable damageable;
+    [SerializeField] Rigidbody rigidbody;
 
     private void OnValidate()
     {
         if (damageable == null)
-            damageable = GetComponent<Damageable>();        
+            damageable = GetComponent<Damageable>();
+        if (rigidbody == null)
+            GetComponent<Rigidbody>();
+
     }
 
 
 
-    void Update()                            // Update is called once per frame
+    void Update()
     {
+
+
+
         if (damageable != null && damageable.health <= 0)
             return;
 
@@ -31,7 +38,8 @@ public class PlayerMoverPhisics : MonoBehaviour
 
     private void Move(Vector3 velocity)
     {
-        transform.position += velocity.normalized * speed * Time.deltaTime;
+        // transform.position += velocity.normalized * speed * Time.deltaTime;
+        rigidbody.velocity = velocity.normalized * speed;
 
         if (velocity != Vector3.zero)
         {
