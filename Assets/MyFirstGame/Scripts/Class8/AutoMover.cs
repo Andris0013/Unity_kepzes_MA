@@ -6,13 +6,20 @@ public class AutoMover : MonoBehaviour
 {
     [SerializeField] float maxSpeed = 3;
     [SerializeField] float acceleration = 1;
+    [SerializeField] new Rigidbody rigidbody;
 
-    Vector3 velocity;
+    void OnValidate()
+    {
+        if (rigidbody == null)
+            rigidbody = GetComponent<Rigidbody>();
+
+    }
+
+
 
     void Update()
     {
-        transform.position += velocity * Time.deltaTime;
-        transform.rotation = Quaternion.LookRotation(velocity);
+        transform.rotation = Quaternion.LookRotation(rigidbody.velocity);
     }
 
     void FixedUpdate()
@@ -24,7 +31,7 @@ public class AutoMover : MonoBehaviour
 
         Vector3 direction = targetPos - selfPos;
         direction.Normalize();
-        velocity = Vector3.MoveTowards(velocity, direction * maxSpeed, Time.fixedDeltaTime * acceleration);
+        rigidbody.velocity = Vector3.MoveTowards(rigidbody.velocity, direction * maxSpeed, Time.fixedDeltaTime * acceleration);
 
     }
 

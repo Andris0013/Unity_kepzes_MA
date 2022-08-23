@@ -3,17 +3,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(Rigidbody))]
+
 public class EnemyFollower : MonoBehaviour
 {
 
     // [SerializeField] float speed;
     [SerializeField] AnimationCurve speedOverDistance;
     [SerializeField] List<Transform> followables;
+    [SerializeField] new Rigidbody rigidbody;
 
     [SerializeField, Range(0, 100)] float startStamina;
     [SerializeField, Range(0, 100)] float regenerateStamina;
     float stamina;
     bool regenerating = false;
+
+    void OnValidate()
+    {
+        if (rigidbody == null)
+            rigidbody = GetComponent<Rigidbody>();
+
+    }
 
 
     private void Start()
@@ -51,9 +62,14 @@ public class EnemyFollower : MonoBehaviour
 
         float distance = Vector3.Distance(followable.position, transform.position);     // or = (   player.position - transform.position).magnitude
         float speed = speedOverDistance.Evaluate(distance);
+        Vector3 velocity = (followable.position - transform.position).normalized;
+        velocity *= speed;
+
+        rigidbody.velocity = velocity;
+
 
         Vector3 startPos = transform.position;
-        transform.position = Vector3.MoveTowards(transform.position, followable.position, speed * Time.deltaTime);
+        //  transform.position = Vector3.MoveTowards(transform.position, followable.position, speed * Time.deltaTime);
         Vector3 endPos = transform.position;
 
         float step = (endPos - startPos).magnitude;

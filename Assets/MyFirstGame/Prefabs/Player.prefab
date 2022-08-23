@@ -479,6 +479,7 @@ MonoBehaviour:
   GameOverObject: {fileID: 0}
   uiText: {fileID: 0}
   invincibilityTime: 2
+  flickDuration: 0.1
 --- !u!114 &7822394974105930479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,7 +517,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7822394974105930452}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.55
   m_Height: 2.89
