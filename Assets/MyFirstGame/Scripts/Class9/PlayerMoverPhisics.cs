@@ -1,25 +1,24 @@
 using UnityEngine;
 
-public class PlayerMover : MonoBehaviour
+public class PlayerMoverPhisics : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float rotationSpeed;
+    [SerializeField] KeyCode rightKey;
 
     [SerializeField] KeyCode upKey;
     [SerializeField] KeyCode downKey;
     [SerializeField] KeyCode leftKey;
-    [SerializeField] KeyCode rightKey;
 
     [SerializeField] Damageable damageable;
-    [SerializeField] Rigidbody rigidbody;
+    [SerializeField] new Rigidbody rigidbody;
 
-    private void OnValidate()
+    void OnValidate()
     {
         if (damageable == null)
             damageable = GetComponent<Damageable>();
         if (rigidbody == null)
             GetComponent<Rigidbody>();
-
     }
 
 
@@ -40,6 +39,8 @@ public class PlayerMover : MonoBehaviour
     {
         // transform.position += velocity.normalized * speed * Time.deltaTime;
         rigidbody.velocity = velocity.normalized * speed;
+
+        // animator.SetBool();
 
         if (velocity != Vector3.zero)
         {

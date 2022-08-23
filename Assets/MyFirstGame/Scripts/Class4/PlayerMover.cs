@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMoverPhisics : MonoBehaviour
+public class PlayerMover : MonoBehaviour
 {
     [SerializeField] float speed;
     [SerializeField] float rotationSpeed;

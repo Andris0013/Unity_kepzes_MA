@@ -6641,7 +6641,11 @@ MonoBehaviour:
   explosionForce: 1000
   explosionRadious: 10
   upwardModifier: 0.2
+  maxDistance: 100
   particles: {fileID: 696311884}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
 --- !u!65 &1471671079
 BoxCollider:
   m_ObjectHideFlags: 0
